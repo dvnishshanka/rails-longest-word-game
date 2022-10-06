@@ -1,0 +1,11 @@
+<div>
+  <h1>Results</h1>
+     <%if @result=='INVALID_LETTERS'%>
+        <p>Sorry but <strong><%=params[:word].upcase%></strong> can't be built out of <%=params[:letters]%>.</p>
+      <%elsif @result=='INVALID_WORD'%>
+        <p>"Sorry but <%=params[:word].upcase%> does not seem to be a valid English word..."</p>
+      <%else%>
+        <p><strong>Congratulations!</strong> <%=params[:word].upcase%> is a valid English word!</p>
+      <%end%>
+    <%=link_to 'Play again', new_path%>
+</div>
